@@ -1,0 +1,39 @@
+@import "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap";
+
+.container {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	min-height: 600px;
+	background-color: white;
+}
+
+.content_side {
+	z-index: 1;
+	flex: 1;
+	height: 100%;
+	padding: 16px;
+}
+
+.login_side {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.background {
+	position: absolute;
+	bottom: 0;
+	z-index: 0;
+	opacity: 0.3;
+}
+
+.cmslogo {
+	position: absolute;
+	z-index: 1;
+	height: 30px;
+	margin: 30px 42px;
+}

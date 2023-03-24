@@ -1,0 +1,56 @@
+.ui_button_container {
+	padding: 4px 8px;
+	line-height: 1.2;
+	border-color: var(--brand-primary);
+	border-radius: 4px;
+	transition: background-color 0.1s linear, border-color 0.1s linear, color 0.1s linear;
+
+	&.ui_ps_size_sm {
+		height: 24px;
+		font-size: 12px;
+	}
+
+	&.ui_ps_size_md {
+		height: 28px;
+	}
+
+	&.ui_ps_size_xl {
+		height: 40px;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	&.ui_ps_themeType_primary {
+		color: #fff;
+		background-color: var(--brand-primary);
+		border-color: var(--brand-primary);
+
+		&:hover {
+			background-color: var(--brand-primary-1);
+			border-color: var(--brand-primary-1);
+		}
+
+		&:active {
+			background-color: var(--brand-primary-2);
+			border-color: var(--brand-primary-2);
+		}
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	&.ui_ps_themeType_ghost {
+		color: var(--brand-primary);
+		background-color: #fff;
+		border-color: var(--brand-primary);
+
+		&:hover {
+			color: #fff;
+			background-color: var(--brand-primary-1);
+			border-color: var(--brand-primary-1);
+		}
+
+		&:active {
+			color: #fff;
+			background-color: var(--brand-primary-2);
+			border-color: var(--brand-primary-2);
+		}
+	}
+}

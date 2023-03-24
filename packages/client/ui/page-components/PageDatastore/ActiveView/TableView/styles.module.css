@@ -1,0 +1,33 @@
+.table_container {
+	height: calc(100% - 50px);
+	overflow: auto;
+}
+
+.pre_code {
+	padding: 0;
+	margin: 0;
+}
+
+.actions {
+	button {
+		margin-right: 12px;
+	}
+
+	display: flex;
+}
+
+.select {
+	padding-right: 10px;
+
+	:global {
+		.ui_select_display_container {
+			width: 200px;
+			height: 30px;
+		}
+	}
+}
+
+.button {
+	width: 36px;
+	height: 160px;
+}

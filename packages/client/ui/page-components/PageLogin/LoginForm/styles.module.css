@@ -1,0 +1,29 @@
+.container {
+	display: block;
+	width: 480px;
+	height: 376px;
+	padding: 24px 54px;
+	background: #fafafa;
+	border-radius: 12px;
+}
+
+.formhead {
+	font-size: 18px;
+	font-weight: 500;
+	color: #828282;
+}
+
+.inputstyle {
+	width: 372px;
+	height: 40px;
+}
+
+.formstart {
+	.label_container {
+		color: red;
+	}
+}
+
+.items {
+	padding-top: 31px;
+}

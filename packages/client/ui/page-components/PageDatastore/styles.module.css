@@ -1,0 +1,20 @@
+.container {
+	display: flex;
+	height: 100%;
+
+	.sidebar {
+		flex-shrink: 0;
+		width: 219px;
+		height: 100%;
+		margin-right: 1px;
+	}
+
+	.content {
+		width: calc(100% - 220px);
+	}
+
+	.active_view_container {
+		width: 100%;
+		height: calc(100% - 36px);
+	}
+}

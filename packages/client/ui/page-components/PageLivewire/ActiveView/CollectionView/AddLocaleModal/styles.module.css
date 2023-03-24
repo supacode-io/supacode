@@ -1,0 +1,25 @@
+.form {
+	display: flex;
+	padding: 20px;
+	font-size: 14px;
+}
+
+.input {
+	margin-left: 20px;
+
+	input {
+		height: 28px;
+	}
+}
+
+.label {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	width: 100px;
+}
+
+.error {
+	font-size: 12px;
+	color: red;
+}

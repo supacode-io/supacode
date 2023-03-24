@@ -1,0 +1,29 @@
+.container {
+	height: 100%;
+	background-color: #fff;
+}
+
+.top_container {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+.search_container {
+	flex: 1;
+	padding: 0;
+}
+
+.search_input {
+	/* margin-right: 8px; */
+	flex: 1;
+}
+
+.list_container {
+	display: block;
+	height: calc(100% - 24px);
+	padding: 0;
+	margin: 0;
+	overflow-y: auto;
+	list-style-type: none;
+}

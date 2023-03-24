@@ -1,0 +1,15 @@
+.ui_ps_theme_error {
+	background-color: #fdebe9;
+
+	.ui_buttonicon_container {
+		background-color: #fdebe9;
+	}
+}
+
+.ui_ps_theme_success {
+	background-color: #f7faef;
+
+	.ui_buttonicon_container {
+		background-color: #f7faef;
+	}
+}

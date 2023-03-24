@@ -1,0 +1,248 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+	provider = "prisma-client-js"
+}
+
+datasource db {
+	provider = "postgresql"
+	url      = env("DATABASE_URL_CMS_SCHEMA")
+}
+
+model Users {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+	name					String
+	email					String @unique
+	password				String
+
+	projects				ProjectUsers[]
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("users")
+}
+
+model Projects {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+	name					String
+	code					String @unique
+
+	users					ProjectUsers[]
+	tokens					ProjectTokens[]
+	datastore_columns		DatastoreColumns[]
+	livewire_locales		LivewireLocales[]
+	livewire_collections	LivewireCollections[]
+	vault_files				VaultFiles[]
+	configstore_content		ConfigStore[]
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("projects")
+}
+
+enum ProjectUserRoles {
+	owner
+	member
+
+	@@map("project_user_roles")
+}
+
+model ProjectUsers {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+	role					ProjectUserRoles
+
+	project       			Projects @relation(fields: [project_id], references: [id])
+	project_id     			String @db.Uuid
+	user   					Users @relation(fields: [user_id], references: [id])
+	user_id 				String @db.Uuid
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("project_users")
+	@@unique([user_id, project_id])
+}
+
+model ProjectTokens {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+	name					String
+	partial_token			String
+	expires					DateTime @db.Timestamptz(3)
+
+	project_id				String @db.Uuid
+	project       			Projects @relation(fields: [project_id], references: [id])
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("project_tokens")
+	@@unique([id, name])
+}
+
+
+enum CmsTypes {
+	id
+	text
+	long_text
+	rich_text
+	list
+	multi_list
+	integer
+	decimal
+	timestamp
+	boolean
+	reference
+	json
+	serial
+
+	@@map("cms_types")
+}
+
+// only add fields that are not present natively
+model DatastoreColumns {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+
+	project_id				String	@db.Uuid
+	project       			Projects @relation(fields: [project_id], references: [id])
+
+	schema_name				String
+	table_name				String
+	column_name				String
+	ordinal_position		Int
+	cms_type				CmsTypes
+	// list, multi-list
+	possible_values			String[] @default([])
+	// boolean
+	value_if_true			String?
+	value_if_false			String?
+	// validations
+	validation_min_char		Int?
+	validation_max_char		Int?
+	validation_pattern		String?
+	validation_min			Int?
+	validation_max			Int?
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("datastore_columns")
+	@@unique([schema_name, table_name, column_name])
+}
+
+
+model LivewireLocales {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+	code					String
+	is_default				Boolean @default(false)
+
+	project_id				String	@db.Uuid
+	project       			Projects @relation(fields: [project_id], references: [id])
+
+	content					LivewireContents[]
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("livewire_locales")
+	@@unique([project_id, code])
+}
+
+model LivewireCollections {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+	name					String
+	code					String
+
+	project_id				String	@db.Uuid
+	project       			Projects @relation(fields: [project_id], references: [id])
+
+	content					LivewireContents[]
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("livewire_collections")
+	@@unique([project_id, code])
+	@@unique([project_id, name])
+}
+
+model LivewireContents {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+
+	collection_id			String @db.Uuid
+	collection       		LivewireCollections @relation(fields: [collection_id], references: [id])
+
+	locale_id				String @db.Uuid
+	locale					LivewireLocales @relation(fields: [locale_id], references: [id])
+
+	key						String
+	value					String
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("livewire_contents")
+	@@unique([collection_id, locale_id, key])
+}
+
+model VaultFiles {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+
+	project_id				String	@db.Uuid
+	project       			Projects @relation(fields: [project_id], references: [id])
+
+	name					String @unique
+	description				String?
+	url						String?
+	mime_type				String?
+	object_key				String?
+	bucket					String?
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("vault_files")
+}
+
+model ConfigStore {
+	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+	project_id				String	@db.Uuid
+	project       			Projects @relation(fields: [project_id], references: [id])
+
+	key						String
+	value 					Json?
+
+	created_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+	updated_on				DateTime @db.Timestamptz(3) @default(dbgenerated("now()"))
+
+	@@map("configstore_content")
+	@@unique([ project_id, key])
+}
+
+
+// enum AuditTypes {
+// 	create
+// 	update
+// 	delete
+
+// 	@@map("audit_types")
+// }
+
+// model Audits {
+// 	id 						String @db.Uuid @id @default(dbgenerated("gen_random_uuid()"))
+// 	type					AuditTypes
+// 	description				String
+// 	timestamp				String @default(dbgenerated("now()"))
+// 	object_schema			String
+// 	object_table			String
+// 	object_id				String
+// 	object_before			Json?
+// 	object_after			Json?
+// 	user_id					String @db.Uuid
+// 	user					Users @relation(fields: [user_id], references: [id])
+	
+// 	@@map("audits")
+// 	@@unique([timestamp, object_schema, object_table, object_id])
+// }

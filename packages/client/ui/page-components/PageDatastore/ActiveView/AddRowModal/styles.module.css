@@ -1,0 +1,13 @@
+.container {
+	display: block;
+	height: calc(100vh - 133px);
+	overflow-y: auto;
+}
+
+.view_container {
+	padding: 8px;
+}
+
+.dialog_container {
+	width: 600px;
+}

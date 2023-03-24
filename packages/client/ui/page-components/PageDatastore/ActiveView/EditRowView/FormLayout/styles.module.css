@@ -1,0 +1,12 @@
+/* .form_container {
+} */
+
+.form_item {
+	margin-bottom: 8px;
+}
+
+.form_actions {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 16px;
+}

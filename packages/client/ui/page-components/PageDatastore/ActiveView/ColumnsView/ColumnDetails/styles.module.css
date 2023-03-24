@@ -1,0 +1,23 @@
+.container {
+	max-width: 480px;
+	padding: 0 8px;
+}
+
+.form_item {
+	margin-bottom: 8px;
+}
+
+.form_actions {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 16px;
+}
+
+.form_header {
+	text-align: center;
+}
+
+.error {
+	font-size: 12px;
+	color: red;
+}

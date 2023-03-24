@@ -1,0 +1,15 @@
+.container {
+	display: flex;
+	height: 100%;
+
+	.sidebar {
+		flex-shrink: 0;
+		width: 200px;
+		height: 100%;
+		border-right: 1px solid var(--border-color);
+	}
+
+	.content {
+		width: calc(100% - 200px);
+	}
+}

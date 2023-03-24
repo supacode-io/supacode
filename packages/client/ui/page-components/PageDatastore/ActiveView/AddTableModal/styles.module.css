@@ -1,0 +1,27 @@
+.form {
+	display: flex;
+	align-items: flex-start;
+	padding: 20px;
+	font-size: 14px;
+}
+
+.input {
+	margin-left: 20px;
+
+	input {
+		width: 370px;
+		height: 28px;
+	}
+}
+
+.label {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: 100px;
+}
+
+.error {
+	font-size: 12px;
+	color: red;
+}

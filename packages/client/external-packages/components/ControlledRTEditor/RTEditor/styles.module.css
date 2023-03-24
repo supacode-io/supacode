@@ -1,0 +1,32 @@
+/* stylelint-disable selector-class-pattern */
+.container {
+	&:global(.quill) {
+		border: 1px solid var(--border-color);
+		border-radius: 4px;
+
+		&:hover {
+			border-color: var(--brand-accent);
+		}
+
+		&:focus-within {
+			border-color: var(--brand-primary);
+		}
+	}
+
+	:global {
+		.ql-toolbar {
+			padding: 4px 8px;
+			border: none;
+			border-bottom: 1px solid var(--border-color);
+		}
+
+		.ql-container {
+			border: none;
+		}
+
+		.ql-editor {
+			min-height: 200px;
+			padding: 4px 8px;
+		}
+	}
+}

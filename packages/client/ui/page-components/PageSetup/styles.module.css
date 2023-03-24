@@ -1,0 +1,32 @@
+.container {
+	padding-top: 100px;
+}
+
+.logo_container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 8px;
+}
+
+.logo_pre_text {
+	display: block;
+	margin-top: 0;
+	margin-right: 6px;
+	margin-bottom: 0;
+	font-size: 20px;
+}
+
+.logo_svg {
+	display: block;
+	height: 12px;
+	margin-top: 1px;
+}
+
+.title {
+	margin-top: 0;
+	margin-bottom: 16px;
+	font-size: 4em;
+	font-weight: 700;
+	color: #333;
+	letter-spacing: 1px;
+}

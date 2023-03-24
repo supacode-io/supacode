@@ -1,0 +1,14 @@
+.container {
+	display: flex;
+	height: calc(100vh - 56px);
+
+	.sidebar {
+		flex-shrink: 0;
+		width: 200px;
+		border-right: 1px solid var(--border-color);
+	}
+
+	.content {
+		width: calc(100% - 200px);
+	}
+}

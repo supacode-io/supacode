@@ -1,0 +1,14 @@
+.search_container {
+	display: flex;
+	padding: 8px;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.list_container {
+	display: block;
+	height: calc(100vh - 101px);
+	padding: 0;
+	margin: 0;
+	overflow-y: auto;
+	list-style-type: none;
+}

@@ -1,0 +1,37 @@
+.container {
+	padding: 5px;
+}
+
+.content_container {
+	display: block;
+	padding: 5px;
+}
+
+.inner_container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -5px;
+	margin-left: -5px;
+}
+
+.card_container {
+	width: calc((100% / 4) - 10px);
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.card_action_container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.card_description {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 12px;
+	color: #999;
+}
+
+.action_button {
+	margin-right: 20px;
+}

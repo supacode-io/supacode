@@ -1,0 +1,12 @@
+{
+    "name": "cogo-cms",
+    "version": "1.0.0",
+    "private": true,
+    "description": "CMS Application",
+    "repository": "git@github.com:supacode-io/supacode.git",
+    "license": "MIT",
+    "author": "Rudraprasad Das <brayn003@gmail.com>",
+    "devDependencies": {
+        "eslint": "^8.35.0"
+    }
+}

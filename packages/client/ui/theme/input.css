@@ -1,0 +1,20 @@
+.ui_input_container {
+	min-height: 28px;
+	font-size: 14px;
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	transition: border-color 0.1s linear;
+
+	&:hover {
+		border-color: var(--brand-accent);
+	}
+
+	&:focus-within {
+		border-color: var(--brand-primary);
+	}
+
+	input {
+		height: 100%;
+		padding: 4px 8px;
+	}
+}

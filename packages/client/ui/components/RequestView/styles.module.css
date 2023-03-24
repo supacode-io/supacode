@@ -1,0 +1,22 @@
+.loading_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.loading_text {
+	color: var(--color-primary-s1);
+}
+
+.error_container {
+	padding: 8px;
+	color: var(--color-danger);
+}
+
+.error_text {
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+}

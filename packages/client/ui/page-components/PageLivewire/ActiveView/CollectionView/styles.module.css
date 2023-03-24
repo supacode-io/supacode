@@ -1,0 +1,16 @@
+.container {
+	width: 100%;
+	height: calc(100% - 32px);
+}
+
+.view_container {
+	max-height: calc(100% - 45px);
+	padding: 4px;
+	overflow: auto;
+}
+
+.extras_container {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}

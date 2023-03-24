@@ -1,0 +1,38 @@
+.tab_list {
+	display: flex;
+	height: 32px;
+}
+
+.tab_item {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	height: 100%;
+	padding: 0;
+	padding: 4px 8px;
+	font-size: 14px;
+	line-height: 1.2;
+	cursor: pointer;
+	background-color: #fff;
+	border: none;
+	border-right: 1px solid var(--border-color);
+	border-bottom: 1px solid var(--border-color);
+
+	&.active {
+		border-bottom-color: transparent;
+	}
+
+	.tab_close_button {
+		margin-left: 8px;
+	}
+
+	.tab_close_icon {
+		display: block;
+		height: 14px;
+	}
+}
+
+.tabs_divider {
+	flex: 1;
+	border-bottom: 1px solid var(--border-color);
+}

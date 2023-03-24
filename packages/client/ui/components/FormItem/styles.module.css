@@ -1,0 +1,28 @@
+.container {
+	margin-bottom: 8px;
+
+	.label_container {
+		display: block;
+	}
+
+	.control_container {
+		display: block;
+	}
+
+	&.is_horizontal {
+		display: flex;
+		align-items: flex-start;
+
+		.label_container {
+			width: 120px;
+			margin-top: 2px;
+			margin-right: 8px;
+			color: #666;
+			text-align: right;
+		}
+
+		.control_container {
+			flex: 1;
+		}
+	}
+}

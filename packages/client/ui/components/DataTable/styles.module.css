@@ -1,0 +1,41 @@
+.container {
+	width: 100%;
+	margin-bottom: 16px;
+	font-size: 14px;
+	line-height: 1.5;
+	border-spacing: 0;
+
+	.body_cell {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.head_cell,
+	.body_cell {
+		height: 32px;
+		padding: 4px 8px;
+		margin: 0;
+		line-height: 24px;
+		text-align: left;
+		background-color: transparent;
+		border-right: 1px solid #e0e0e0;
+		border-bottom: 1px solid #e0e0e0;
+
+		&:last-of-type {
+			border-right: none;
+		}
+	}
+
+	.body_row {
+		&.ui_can_select {
+			cursor: pointer;
+		}
+
+		&.ui_selected {
+			.body_cell {
+				background-color: #e0e0e0;
+			}
+		}
+	}
+}

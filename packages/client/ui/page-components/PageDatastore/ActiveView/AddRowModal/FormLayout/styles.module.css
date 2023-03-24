@@ -1,0 +1,18 @@
+.form_group {
+	label {
+		flex-shrink: 0;
+		width: 100px;
+		margin-right: 10px;
+		text-align: right;
+	}
+}
+
+.label_icon {
+	margin-right: 5px;
+}
+
+.content_inline {
+	flex: 1;
+
+	/* width: calc(100% - 120px); */
+}

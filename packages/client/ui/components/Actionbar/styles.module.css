@@ -1,0 +1,39 @@
+.container {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	background-color: #fff;
+	box-shadow: inset 0 -1px 0 rgb(17 20 24 / 15%);
+}
+
+.start_container {
+	display: flex;
+	height: 100%;
+}
+
+.end_container {
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+}
+
+.search_container {
+	width: 250px;
+	height: 100%;
+	margin-right: 10px;
+}
+
+.search_input {
+	width: 100%;
+	height: 100%;
+	border: 0;
+
+	input {
+		padding: 4px 8px;
+	}
+}
+
+.button_container {
+	display: flex;
+	align-items: center;
+}

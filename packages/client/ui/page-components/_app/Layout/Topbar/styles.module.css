@@ -1,0 +1,61 @@
+.logo {
+	padding: 10px;
+}
+
+.logo_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 64px;
+	height: 100%;
+	padding: 4px 8px;
+	margin-right: 0;
+}
+
+.logo_svg {
+	display: block;
+	width: 40px;
+	height: 100%;
+}
+
+.topmenu_container {
+	display: flex;
+	flex: 1;
+	padding: 4px 8px;
+}
+
+.title_container {
+	padding: 4px 8px;
+}
+
+.title_text {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.action_link {
+	margin-top: 3px;
+	margin-right: 16px;
+	margin-left: 16px;
+	color: var(--color-primary);
+	text-decoration: none;
+	will-change: color;
+	transition: color 0.1s linear;
+
+	&:hover {
+		color: var(--color-accent);
+	}
+}
+
+.profile_container {
+	width: 280px;
+	padding: 20px;
+}
+
+.profile_action_container {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 20px;
+}

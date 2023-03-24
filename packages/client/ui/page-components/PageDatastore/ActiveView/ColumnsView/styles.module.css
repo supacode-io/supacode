@@ -1,0 +1,18 @@
+.container {
+	width: 100%;
+	height: calc(100% - 32px);
+}
+
+.view_container {
+	display: flex;
+	height: calc(100% - 45px);
+}
+
+.list_container {
+	width: 200px;
+	border-right: 1px solid var(--border-color);
+}
+
+.details_container {
+	flex: 1;
+}

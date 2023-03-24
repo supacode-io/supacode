@@ -1,0 +1,14 @@
+@import "~normalize.css/normalize.css";
+
+html,
+body {
+	overscroll-behavior-y: none;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+* {
+	box-sizing: border-box;
+}

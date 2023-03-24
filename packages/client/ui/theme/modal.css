@@ -1,0 +1,57 @@
+.ui_modal_container {
+	min-height: 100vh;
+	padding-top: 48px;
+	padding-bottom: 48px;
+	overflow: auto;
+	background-color: rgb(0 0 0 / 40%);
+
+	.ui_modal_dialog {
+		position: relative;
+		top: initial;
+		right: initial;
+		bottom: initial;
+		left: initial;
+		margin-right: auto;
+		margin-left: auto;
+		background-color: #fff;
+		border: 0;
+		border-radius: 4px;
+		box-shadow: none;
+		transform: initial;
+
+		&.ui_ps_size_lg {
+			width: 800px;
+		}
+	}
+
+	.ui_modal_header_container {
+		height: 36px;
+		padding: 4px 8px;
+		background-color: var(--brand-primary);
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+	}
+
+	.ui_modal_body_container {
+		padding: 8px;
+	}
+
+	.ui_modal_header_title {
+		font-size: 14px;
+		font-weight: 500;
+		color: #fff;
+	}
+
+	.ui_modal_close_button {
+		width: 18px;
+		height: 18px;
+		color: #fff;
+		background-color: transparent;
+		border: none;
+	}
+
+	.ui_modal_footer_container {
+		padding: 8px;
+		border-top: 1px solid var(--border-color);
+	}
+}

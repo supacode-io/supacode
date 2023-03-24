@@ -1,0 +1,28 @@
+.container {
+	width: 100%;
+	min-height: 28px;
+	padding: 2px 4px;
+	border: 1px solid var(--border-color);
+}
+
+.control {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	line-height: 1.5;
+	color: #000;
+	resize: none;
+	border: none;
+	outline: none;
+
+	&::placeholder {
+		user-select: none;
+	}
+
+	&:disabled,
+	&[disabled] {
+		cursor: no-drop;
+	}
+}

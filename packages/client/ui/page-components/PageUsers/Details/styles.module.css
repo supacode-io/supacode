@@ -1,0 +1,57 @@
+.usertable {
+	margin-top: 20px;
+}
+
+.tablehead {
+	padding: 4px 8px;
+}
+
+.tabledata {
+	padding: 4px 8px;
+	text-align: center;
+}
+
+.actions {
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+	padding: 4px 8px;
+}
+
+.heading {
+	display: flex;
+	padding: 8px;
+}
+
+.tableheading {
+	background-color: lightgray;
+}
+
+.container {
+	width: 100%;
+}
+
+.table {
+	width: 100%;
+}
+
+.addbutton {
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+	margin-right: 20px;
+}
+
+.userhead {
+	display: flex;
+	flex: 1;
+	justify-content: flex-start;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.action_button {
+	width: 25px;
+	height: 25px;
+	padding: 1px;
+}
